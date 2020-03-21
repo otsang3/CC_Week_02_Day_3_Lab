@@ -35,7 +35,7 @@ class CustomerTest < MiniTest::Test
     assert_equal(1, @customer1.count_drinks)
   end
 
-  def test_customer_takes_drink_from_pub()
+  def test_customer_takes_drink_from_pub__true()
     @customer1.customer_buys_drink(@pub, @drink2)
     assert_equal(1, @customer1.count_drinks)
     assert_equal(1, @pub.drink_count)
@@ -43,7 +43,7 @@ class CustomerTest < MiniTest::Test
     assert_equal(54.5, @pub.till)
   end
 
-  def test_customer2_takes_drink_from_pub()
+  def test_customer_takes_drink_from_pub__false()
     @customer2.customer_buys_drink(@pub, @drink2)
     assert_equal(0, @customer2.count_drinks)
     assert_equal(2, @pub.drink_count)
